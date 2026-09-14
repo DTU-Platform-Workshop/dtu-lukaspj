@@ -18,7 +18,7 @@ spec:
     helm:
       # Put any environment-specific configuration here
       values: |
-        fqdn: lukaspj.dtu.novus.legogroup.io
+        
   destination:
     server: https://kubernetes.default.svc
     # This should be set to the same as project, i.e. runtime name and runtime environment
