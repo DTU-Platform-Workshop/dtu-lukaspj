@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: otel-demo
+  finalizers:
+    # Ensure that all resources are cleaned up if this Application is deleted
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # This is your runtime name and runtime environment.
+  project: lukaspj-dtu
+  source:
+    # The URL of the public Helm repository
+    repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
+    # Which branch/tag/commit to deploy from. HEAD is the default branch in the GitHub repository
+    targetRevision: HEAD
+    # The name of the Chart
+    chart: open-telemetry/opentelemetry-demo
+    helm:
+      # Put any environment-specific configuration here
+      values: |
+        fqdn: lukaspj.dtu.novus.legogroup.io
+  destination:
+    server: https://kubernetes.default.svc
+    # This should be set to the same as project, i.e. runtime name and runtime environment
+    namespace: lukaspj-dtu
+  # Sync policy, this should always be set to automated self-heal and prune
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
