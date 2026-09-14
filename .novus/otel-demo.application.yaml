@@ -18,7 +18,29 @@ spec:
     helm:
       # Put any environment-specific configuration here
       values: |
+        opentelemetry-collector:
+          config:
+            exporters:
+              otlp/gcloud:
+                endpoint: "novus-opentelemetry-collector.novus-telemetry.svc.cluster.local:4317"
+                tls:
+                  insecure: true
+            service:
+              pipelines:
+                traces:
+                  exporters: [otlp/gcloud, debug, spanmetrics]
+                metrics:
+                  exporters: [otlp/gcloud, debug]
+                logs:
+                  exporters: [otlp/gcloud, debug]
+        jaeger:
+          enabled: false
         
+        prometheus:
+          enabled: false
+        
+        grafana:
+          enabled: false
   destination:
     server: https://kubernetes.default.svc
     # This should be set to the same as project, i.e. runtime name and runtime environment
