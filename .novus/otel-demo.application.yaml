@@ -14,7 +14,7 @@ spec:
     # Which branch/tag/commit to deploy from. HEAD is the default branch in the GitHub repository
     targetRevision: HEAD
     # The name of the Chart
-    chart: open-telemetry/opentelemetry-demo
+    chart: opentelemetry-demo
     helm:
       # Put any environment-specific configuration here
       values: |
