@@ -18,21 +18,13 @@ spec:
     helm:
       # Put any environment-specific configuration here
       values: |
+        default:
+          envOverrides:
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: novus-opentelemetry-collector.novus-telemetry.svc.cluster.local
+      
         opentelemetry-collector:
-          config:
-            exporters:
-              otlp/gcloud:
-                endpoint: "novus-opentelemetry-collector.novus-telemetry.svc.cluster.local:4317"
-                tls:
-                  insecure: true
-            service:
-              pipelines:
-                traces:
-                  exporters: [otlp/gcloud, debug, spanmetrics]
-                metrics:
-                  exporters: [otlp/gcloud, debug]
-                logs:
-                  exporters: [otlp/gcloud, debug]
+          enabled: false
         jaeger:
           enabled: false
         
