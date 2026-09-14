@@ -12,7 +12,7 @@ spec:
     # The URL of the public Helm repository
     repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
     # Which branch/tag/commit to deploy from. HEAD is the default branch in the GitHub repository
-    targetRevision: HEAD
+    targetRevision: 0.41.1
     # The name of the Chart
     chart: opentelemetry-demo
     helm:
