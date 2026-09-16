@@ -24,6 +24,12 @@ spec:
         imagePullSecrets:
           - name: novus-pull-secret
         otlpEndpoint: http://novus-opentelemetry-collector.novus-telemetry.svc.cluster.local:4317
+
+        ingress:
+          baseDomain: lukaspj.dtu.novus.legogroup.io
+
+        loadgen:
+          enabled: true
       
         opentelemetry-collector:
           enabled: false
