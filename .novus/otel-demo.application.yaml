@@ -30,6 +30,8 @@ spec:
 
         loadgen:
           enabled: true
+          env:
+            RPS: "0.2"
       
         opentelemetry-collector:
           enabled: false
