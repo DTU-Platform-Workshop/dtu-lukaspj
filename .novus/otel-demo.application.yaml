@@ -10,18 +10,19 @@ spec:
   project: lukaspj-dtu
   source:
     # The URL of the public Helm repository
-    repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
+    repoURL: git@github.com:LEGO/novus-dtu-workshop.git
     # Which branch/tag/commit to deploy from. HEAD is the default branch in the GitHub repository
-    targetRevision: 0.41.1
+    targetRevision: HEAD
     # The name of the Chart
-    chart: opentelemetry-demo
+    path: otel-demo-1/charts/otel-demo-1
     helm:
       # Put any environment-specific configuration here
       values: |
-        default:
-          envOverrides:
-            - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: novus-opentelemetry-collector.novus-telemetry.svc.cluster.local
+        image:
+          repository: artifactory.novus.legogroup.io/ghcr/lego/novus-dtu-workshop/otel-demo-1
+        imagePullSecrets:
+          - name: novus-pull-secret
+        otlpEndpoint: http://novus-opentelemetry-collector.novus-telemetry.svc.cluster.local:4317
       
         opentelemetry-collector:
           enabled: false
