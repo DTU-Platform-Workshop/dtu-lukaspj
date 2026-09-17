@@ -26,7 +26,7 @@ spec:
         otlpEndpoint: http://novus-opentelemetry-collector.novus-telemetry.svc.cluster.local:4317
 
         ingress:
-          baseDomain: {{ .RuntimeName }}.{{ .RuntimeEnv }}.novus.legogroup.io
+          baseDomain: lukaspj.dtu.novus.legogroup.io
 
   destination:
     server: https://kubernetes.default.svc
