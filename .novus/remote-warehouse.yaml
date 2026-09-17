@@ -25,9 +25,6 @@ spec:
           - name: novus-pull-secret
         otlpEndpoint: http://novus-opentelemetry-collector.novus-telemetry.svc.cluster.local:4317
 
-        ingress:
-          baseDomain: lukaspj.dtu.novus.legogroup.io
-
   destination:
     server: https://kubernetes.default.svc
     # This should be set to the same as project, i.e. runtime name and runtime environment
