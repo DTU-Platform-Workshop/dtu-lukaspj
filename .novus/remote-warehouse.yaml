@@ -20,7 +20,7 @@ spec:
       values: |
         image:
           repository: artifactory.novus.legogroup.io/ghcr/lego/novus-dtu-workshop/otel-demo-1
-          tag: 20260917-67ba901
+          tag: 20260918-323faaf
         imagePullSecrets:
           - name: novus-pull-secret
         otlpEndpoint: http://novus-opentelemetry-collector.novus-telemetry.svc.cluster.local:4317
