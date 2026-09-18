@@ -19,7 +19,7 @@ spec:
       # Put any environment-specific configuration here
       values: |
         image:
-          repository: artifactory.novus.legogroup.io/ghcr/lego/novus-dtu-workshop/otel-demo-1
+          repository: artifactory.novus.legogroup.io/ghcr/lego/novus-dtu-workshop/remote-warehouse
           tag: 20260918-5e7bbc2
         imagePullSecrets:
           - name: novus-pull-secret
