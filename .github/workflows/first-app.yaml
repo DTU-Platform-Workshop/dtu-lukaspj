@@ -1,10 +1,10 @@
-name: simple-remote-warehouse to GHCR
+name: first-app to GHCR
 on:
   push:
     branches: [main]
     paths:
-      - simple-remote-warehouse/**
-      - .github/workflows/simple-remote-warehouse-image.yaml
+      - first-app/**
+      - .github/workflows/first-app.yaml
 
 env:
   IMAGE: first-app
