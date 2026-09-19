@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Docker image, you can write:
 # COPY . /app/
 # You can also just copy the files you need:
-COPY app.py /app/
+COPY *.py /app/
 
 # Run as non-root (numeric UID; no user entry needed for read-only FS).
 USER 10001
