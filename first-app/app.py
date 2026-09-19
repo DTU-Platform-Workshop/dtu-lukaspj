@@ -13,6 +13,7 @@ async def lifespan(app: FastAPI):
     print(f"I'm shutting down", flush=True)
 
 
+
 app = FastAPI(title="my-app", lifespan=lifespan)
 
 
