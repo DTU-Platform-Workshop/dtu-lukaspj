@@ -8,8 +8,8 @@ spec:
   service:
     image:
       # Make sure to update these values:
-      repository: ghcr.io/dtu-platform-workshop/dtu-<your-username>/otel-app
-      tag: <insert-tag>
+      repository: ghcr.io/dtu-platform-workshop/dtu-lukaspj/otel-app
+      tag: 20260919-6d9416b
 
     useSamePortForHealthProbes: true
 
