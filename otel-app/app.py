@@ -4,7 +4,11 @@ import os
 
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
+from opentelemetry import trace
 
+from telemetry import instrument_app, setup_tracer
+
+setup_tracer("otel-app")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -14,6 +18,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="my-app", lifespan=lifespan)
+instrument_app(app)
 
 
 @app.get("/readyz")
