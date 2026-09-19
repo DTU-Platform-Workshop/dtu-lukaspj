@@ -7,8 +7,8 @@ spec:
     subdomain: first-app
   service:
     image:
-      repository: ghcr.io/dtu-platform-workshop/dtu-lukaspj
-      tag: 20260919-8aa6979
+      repository: ghcr.io/dtu-platform-workshop/dtu-lukaspj/first-app
+      tag: 20260919-be53b44
 
     useSamePortForHealthProbes: true
 
