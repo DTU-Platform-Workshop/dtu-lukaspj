@@ -35,4 +35,4 @@ jobs:
         with:
           context: ${{ env.CONTEXT }}
           push: true
-          tags: ghcr.io/${{ steps.package-version.outputs.repo }}:${{ steps.package-version.outputs.version }}
+          tags: ghcr.io/${{ steps.package-version.outputs.repo }}/${{ env.IMAGE }}:${{ steps.package-version.outputs.version }}
