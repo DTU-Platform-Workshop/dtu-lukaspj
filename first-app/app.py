@@ -2,7 +2,7 @@ import signal
 import sys
 import os
 
-from fastapi import Body, FastAPI
+from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
 
