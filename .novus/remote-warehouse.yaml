@@ -5,7 +5,7 @@ metadata:
 spec:
   image:
     repository: ghcr.io/lego/novus-dtu-workshop/simple-remote-warehouse
-    tag: 20260919-3a611c9
+    tag: 20260918-5e7bbc2
 
   useSamePortForHealthProbes: true
 
