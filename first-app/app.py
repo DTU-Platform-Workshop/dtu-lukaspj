@@ -3,13 +3,16 @@ import sys
 import os
 
 from fastapi import Body, FastAPI
+from contextlib import asynccontextmanager
 
-app = FastAPI(title="my-app")
 
-
-@app.on_event("startup")
-def announce_ready():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     print(f"I'm alive at {os.getenv('PORT', '4242')}", flush=True)
+    yield
+
+
+app = FastAPI(title="my-app", lifespan=lifespan)
 
 
 @app.get("/")
