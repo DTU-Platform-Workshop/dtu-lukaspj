@@ -1,7 +1,7 @@
 apiVersion: novus.legogroup.io/v1alpha1
 kind: Service
 metadata:
-  name: remote-warehouse
+  name: warehouse
 spec:
   image:
     repository: ghcr.io/lego/novus-dtu-workshop/simple-remote-warehouse
