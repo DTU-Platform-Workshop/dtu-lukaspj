@@ -10,6 +10,7 @@ from contextlib import asynccontextmanager
 async def lifespan(app: FastAPI):
     print(f"I'm alive at {os.getenv('PORT', '4242')}", flush=True)
     yield
+    print(f"I'm shutting down", flush=True)
 
 
 app = FastAPI(title="my-app", lifespan=lifespan)
