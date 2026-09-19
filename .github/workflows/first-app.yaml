@@ -34,4 +34,4 @@ jobs:
         with:
           context: ${{ env.CONTEXT }}
           push: true
-          tags: ghcr.io/${{ github.event.repository.owner.name }}/${{ github.event.repository.name }}/${{ env.IMAGE }}:${{ steps.package-version.outputs.version }}
+          tags: ghcr.io/${{ github.repository }}/${{ env.IMAGE }}:${{ steps.package-version.outputs.version }}
