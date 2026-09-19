@@ -8,7 +8,7 @@ spec:
   service:
     image:
       repository: ghcr.io/dtu-platform-workshop/dtu-lukaspj/first-app
-      tag: 20260919-89e5cd7
+      tag: 20260919-e59a884
 
     useSamePortForHealthProbes: true
 
